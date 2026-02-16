@@ -1,0 +1,70 @@
+import gradio as gr
+import json, os, sys
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+from BabyCryLast import analyze
+
+# --- Load translations ---
+with open(os.path.join(os.path.dirname(__file__), "translations.json"), "r", encoding="utf-8") as f:
+    translations = json.load(f)
+
+DEFAULT_LANG = "en"
+
+def build_ui(lang):
+    t = translations[lang]
+    css_path = os.path.join(os.path.dirname(__file__), "style.css")
+    with open(css_path, "r") as f:
+        css = f.read()
+
+    with gr.Blocks(css=css, title="👶 BabyCry Analyzer") as app:
+        gr.HTML("<div class='panel'><h1>👶 BabyCry Analyzer</h1><p>AI-Powered Cry Emotion and Health Detection</p></div>")
+
+        # --- Navigation Buttons ---
+        with gr.Row(elem_classes="panel"):
+            home_btn = gr.Button("🏠 Home")
+            analyze_btn = gr.Button("🎧 Analyze Cry")
+            map_btn = gr.Button("🗺️ Nearby Hospitals (Coming Soon)")
+            lang_dropdown = gr.Dropdown(["en", "tj", "ru"], value=lang, label="🌐 Language")
+
+        # --- PAGE 1: HOME ---
+        with gr.Column(visible=True, elem_classes="panel") as home_page:
+            gr.HTML("<h2>Welcome to BabyCry Analyzer</h2><p>This system detects emotions and atypical cry patterns using advanced AI models.</p>")
+            start_btn = gr.Button("🚀 Start Analysis")
+
+        # --- PAGE 2: ANALYZE ---
+        with gr.Column(visible=False, elem_classes="panel") as analyze_page:
+            gr.HTML("<h2>Upload or Record a Baby Cry</h2>")
+            audio_input = gr.Audio(sources=["microphone", "upload"], type="filepath", label="🎙️ Cry Audio Input")
+            result_box = gr.HTML("<div class='result-card'>Result will appear here...</div>")
+            analyze_button = gr.Button("🔍 Analyze Now")
+
+            def run_analysis(audio):
+                result = analyze(audio)
+                return f"<div class='result-card'><h3>{result}</h3></div>"
+
+            analyze_button.click(run_analysis, inputs=audio_input, outputs=result_box)
+
+        # --- PAGE 3: MAP ---
+        with gr.Column(visible=False, elem_classes="panel") as map_page:
+            gr.HTML("<h2>Nearby Hospitals</h2><p>Map and support resources coming soon...</p>")
+
+        # --- NAVIGATION LOGIC ---
+        def switch(page):
+            return (
+                gr.update(visible=(page == "home")),
+                gr.update(visible=(page == "analyze")),
+                gr.update(visible=(page == "map")),
+            )
+
+        home_btn.click(lambda: switch("home"), outputs=[home_page, analyze_page, map_page])
+        analyze_btn.click(lambda: switch("analyze"), outputs=[home_page, analyze_page, map_page])
+        map_btn.click(lambda: switch("map"), outputs=[home_page, analyze_page, map_page])
+        start_btn.click(lambda: switch("analyze"), outputs=[home_page, analyze_page, map_page])
+
+        gr.HTML("<div class='footer'>© 2025 BabyCry Analyzer | AI Health Companion</div>")
+
+    return app
+
+
+if __name__ == "__main__":
+    ui = build_ui(DEFAULT_LANG)
+    ui.launch()

@@ -1,0 +1,69 @@
+{
+  "en": {
+    "analyzer_header": "🔊 Cry Analyzer",
+    "hospitals_header": "🏥 Nearby Hospitals",
+    "about_header": "ℹ️ About",
+    "app_title": "👶 BabyCry — Intelligent Cry Analyzer",
+    "app_tagline": "Real-time cry interpretation + anomaly screening. Multilingual UI.",
+    "tab_analyzer": "Cry Analyzer",
+    "tab_hospitals": "Nearby Hospitals",
+    "tab_about": "About",
+    "upload_label": "Upload or Record Baby Cry",
+    "analyze_btn": "Analyze",
+    "result_label": "Analysis Result",
+    "lang_label": "Language",
+    "map_hint": "Nearest pediatric clinics and hospitals in your area.",
+    "about_md": "### What this app does\n- Classifies baby cry emotion from audio.\n- Screens for atypical cry patterns using acoustic features.\n\n### Notes\n- This is **not** a medical diagnosis tool. It provides supportive signals.\n- Avoid using adult speech or music; it will try to classify anything that looks like a cry.\n\n**Made with care.**",
+    "phrases": {
+      "No cry detected": "No cry detected",
+      "No cry pattern detected": "No cry pattern detected",
+      "Detected:": "Detected:",
+      "Typical cry pattern": "Typical cry pattern",
+      "Atypical cry pattern": "Atypical cry pattern"
+    }
+  },
+  "tj": {
+    "analyzer_header": "🔊 Таҳлили гиря",
+    "hospitals_header": "🏥 Беморхонаҳои наздик",
+    "about_header": "ℹ️ Дар бораи барнома",
+    "app_title": "👶 BabyCry — Таҳлилгари оқилонаи гиря",
+    "app_tagline": "Тафсири фаврии гиря + санҷиши намунаҳои ғайримуқаррарӣ.",
+    "tab_analyzer": "Таҳлили гиря",
+    "tab_hospitals": "Беморхонаҳои наздик",
+    "tab_about": "Дар бораи барнома",
+    "upload_label": "Гиряи кӯдакро бор ё сабт кунед",
+    "analyze_btn": "Таҳлил",
+    "result_label": "Натиҷаи таҳлил",
+    "lang_label": "Забон",
+    "map_hint": "Клиникаҳо ва беморхонаҳои наздики кӯдакона дар минтақаи шумо.",
+    "about_md": "### Барнома чӣ кор мекунад\n- Эҳсоси гиряи кӯдакро аз аудио муайян мекунад.\n- Намунаҳои ғайримуқаррарии гиряро ба воситаи аломатҳои акустикӣ месанҷад.\n\n**Бо ғамхорӣ сохта шуд.**",
+    "phrases": {
+      "No cry detected": "Гиря муайян нашуд",
+      "Detected:": "Муайян шуд:",
+      "Typical cry pattern": "Намунаи оддии гиря",
+      "Atypical cry pattern": "Намунаи ғайримуқаррарии гиря"
+    }
+  },
+  "ru": {
+    "analyzer_header": "🔊 Анализ плача",
+    "hospitals_header": "🏥 Ближайшие больницы",
+    "about_header": "ℹ️ О проекте",
+    "app_title": "👶 BabyCry — Интеллектуальный анализ плача",
+    "app_tagline": "Онлайн-интерпретация плача + скрининг атипичных паттернов.",
+    "tab_analyzer": "Анализ плача",
+    "tab_hospitals": "Ближайшие больницы",
+    "tab_about": "О проекте",
+    "upload_label": "Загрузить или записать плач ребёнка",
+    "analyze_btn": "Анализ",
+    "result_label": "Результат анализа",
+    "lang_label": "Язык",
+    "map_hint": "Ближайшие детские клиники и больницы в вашем районе.",
+    "about_md": "### Что делает приложение\n- Классифицирует эмоциональное состояние по аудио плача.\n- Проверяет на атипичные паттерны по акустическим признакам.\n\n**Сделано с заботой.**",
+    "phrases": {
+      "No cry detected": "Плач не обнаружен",
+      "Detected:": "Обнаружено:",
+      "Typical cry pattern": "Типичный паттерн плача",
+      "Atypical cry pattern": "Атипичный паттерн плача"
+    }
+  }
+}
